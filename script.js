@@ -10,8 +10,23 @@ function generateMonkeyArray(userLength) {
     return generatedMessage;
 }
 
+function arrayToString(generatedMessage) {
+  let arrayString = "";
+  for (let i = 0; i < generatedMessage.length; i++) {
+    if (i === generatedMessage.length - 1) {
+        arrayString += generatedMessage[i].toLowerCase();
+        arrayString += "!";
+    }
+    else if (i === 0) {
+        arrayString += generatedMessage[i];
+        arrayString += '-';
+    }
+    else {
+        arrayString += generatedMessage[i].toLowerCase();
+        arrayString += "-";
+    }
+  }
+  return arrayString;
+}
 
-
-console.log(generateMonkeyArray(3));
-console.log(generateMonkeyArray(4));
-console.log(generateMonkeyArray(2));
+console.log(arrayToString(generateMonkeyArray(3)));
