@@ -9,7 +9,7 @@ function generateWordArray(userLength, wordDictionary) {
   return generatedMessage;
 }
 
-function arrayToString(generatedMessage) {
+function arrayToString(generatedMessage, textElement) {
   let arrayString = "";
   for (let i = 0; i < generatedMessage.length; i++) {
     if (i === generatedMessage.length - 1) {
@@ -23,9 +23,15 @@ function arrayToString(generatedMessage) {
       arrayString += "-";
     }
   }
+  textElement.innerHTML = arrayString;
   return arrayString;
 }
 
 let monkeyWords = ["Ooh", "Aah", "Eee", "Ook", "Agh", "Eek"];
 let cowWords = ["Moo", "Moo", "Moo", "Moo", "Moo", "Moo"];
-console.log(arrayToString(generateWordArray(5, monkeyWords)));
+let textBox = document.getElementById('text');
+let genButton = document.getElementById("gen-button");
+genButton.addEventListener(
+  'click',
+  arrayToString(generateWordArray(10, monkeyWords), textBox)
+);
