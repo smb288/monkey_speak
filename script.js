@@ -1,10 +1,9 @@
-function generateMonkeyArray(userLength) {
-    let monkeyWords = ["Ooh", "Aah", "Eee", "Ook", "Agh", "Eek"];
+function generateWordArray(userLength, wordDictionary) {
     let generatedMessage = [];
 
     for (let i = 0; i < userLength; i++) {
       let randomNum = Math.floor(Math.random() * 6);
-      generatedMessage.push(monkeyWords[randomNum]);
+      generatedMessage.push(wordDictionary[randomNum]);
     }
 
     return generatedMessage;
@@ -29,4 +28,5 @@ function arrayToString(generatedMessage) {
   return arrayString;
 }
 
-console.log(arrayToString(generateMonkeyArray(3)));
+let monkeyWords = ["Ooh", "Aah", "Eee", "Ook", "Agh", "Eek"];
+console.log(arrayToString(generateWordArray(3, monkeyWords)));
