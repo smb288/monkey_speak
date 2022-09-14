@@ -2,7 +2,7 @@ function generateWordArray(userLength, wordDictionary) {
     let generatedMessage = [];
 
     for (let i = 0; i < userLength; i++) {
-      let randomNum = Math.floor(Math.random() * 6);
+      let randomNum = Math.floor(Math.random() * wordDictionary.length);
       generatedMessage.push(wordDictionary[randomNum]);
     }
 
@@ -29,4 +29,5 @@ function arrayToString(generatedMessage) {
 }
 
 let monkeyWords = ["Ooh", "Aah", "Eee", "Ook", "Agh", "Eek"];
-console.log(arrayToString(generateWordArray(3, monkeyWords)));
+let cowWords = ["Moo", "Moo", "Moo", "Moo", "Moo", "Moo"];
+console.log(arrayToString(generateWordArray(10, cowWords)));
