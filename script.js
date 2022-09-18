@@ -29,9 +29,9 @@ function arrayToString(generatedMessage, textElement) {
 
 let monkeyWords = ["Ooh", "Aah", "Eee", "Ook", "Agh", "Eek"];
 let cowWords = ["Moo", "Moo", "Moo", "Moo", "Moo", "Moo"];
-let textBox = document.getElementById('text');
+let textBox = document.getElementById("text");
 let genButton = document.getElementById("gen-button");
-genButton.addEventListener(
-  'click',
-  arrayToString(generateWordArray(10, monkeyWords), textBox)
-);
+
+genButton.addEventListener("click", () => {
+  arrayToString(generateWordArray(10, monkeyWords), textBox);
+});
