@@ -1,3 +1,22 @@
+const monkeySound1 = new Audio("./monkey_sounds/monkey_sound1.wav"
+);
+
+const monkeySound2 = new Audio("./monkey_sounds/monkey_sound2.wav"
+);
+
+const monkeySound3 = new Audio("./monkey_sounds/monkey_sound3.wav");
+
+// const monkeySound4 = new Audio("./monkey_sounds/monkey_sound4.wav");
+
+const monkeySound5 = new Audio("./monkey_sounds/monkey_sound5.mp3");
+
+let soundArray = [monkeySound1, 
+                  monkeySound2, 
+                  monkeySound3,
+                  // monkeySound4,
+                  monkeySound5                  
+                ];
+
 function generateWordArray(userLength, wordDictionary) {
   let generatedMessage = [];
 
@@ -34,4 +53,6 @@ let genButton = document.getElementById("gen-button");
 
 genButton.addEventListener("click", () => {
   arrayToString(generateWordArray(10, monkeyWords), textBox);
+  let randomSound = Math.floor(Math.random() * soundArray.length);
+  soundArray[randomSound].play();
 });
