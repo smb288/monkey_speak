@@ -8,6 +8,8 @@ const monkeySound4 = new Audio("./monkey_sounds/monkey_sound4.wav");
 
 const monkeySound5 = new Audio("./monkey_sounds/monkey_sound5.mp3");
 
+const luckyMonkeySound = new Audio("./monkey_sounds/lucky_monkey.wav");
+
 let soundArray = [
   monkeySound1,
   monkeySound3
@@ -47,14 +49,22 @@ let cowWords = ["Moo", "Moo", "Moo", "Moo", "Moo", "Moo"];
 let textBox = document.getElementById("text");
 let genButton = document.getElementById("gen-button");
 
+let monkey1 = document.getElementById("monkey");
+let monkey2 = document.getElementById("monkey1");
+
 genButton.addEventListener("click", () => {
   let luckyMonkey = Math.floor(Math.random() * 50);
   if(luckyMonkey === 42) {
     textBox.innerHTML = "Lucky Monkey!";
+    luckyMonkeySound.play();
+    monkey1.style.visibility = "visible";
+    monkey2.style.visibility = "visible";
   }
   else {
+    let randomSound = Math.floor(Math.random() * soundArray.length);
     arrayToString(generateWordArray(10, monkeyWords), textBox);
+    soundArray[randomSound].play();
+    monkey1.style.visibility = "hidden";
+    monkey2.style.visibility = "hidden";
   }
-  let randomSound = Math.floor(Math.random() * soundArray.length);
-  soundArray[randomSound].play();
 });

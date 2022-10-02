@@ -1,6 +1,5 @@
 * {
     background-color: #694724;
-    font-family: 
 }
 
 .wrapper {
@@ -27,12 +26,12 @@ button {
 }
 
 #text {
-    color:#F2DA80;
-    text-align: center;
-    font-weight: bold;
-    font-size: 50px;
-    top: 200px;
-    margin: 0;
+  color:#F2DA80;
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+  top: 200px;
+  margin: 0;
   position: fixed;
   top: 75%;
   left: 50%;
@@ -46,13 +45,16 @@ html {
 }
 
 #monkey1 {
+    display: inline-block;
     float: left;
+    visibility: hidden;
 }
 
 #monkey {
- display: inline-flex;
+ display: inline-block;
  position: relative;
  float: right;
+ visibility: hidden;
  -webkit-transform: scaleX(-1);
  transform: scaleX(-1);
 
